@@ -9,7 +9,7 @@ A library that uses Deno's
 [flash server](https://github.com/denoland/deno/tree/main/ext/flash)
 (experimental) to serve 103 Early Hints.
 
-> **Note** See [here](https://dev.to/qainsights/what-is-http-103-1l26) for 103
+> **Note**: See [here](https://dev.to/qainsights/what-is-http-103-1l26) for 103
 > Early Hints.
 
 ```ts
@@ -33,14 +33,14 @@ Deno.serve(withEarlyHints(async function* (_request) {
 }));
 ```
 
-> **Warning** Deno flash server (`Deno.serve()``) is an unstable API (as of
+> **Warning**: Deno flash server (`Deno.serve()``) is an unstable API (as of
 > v1.25). The API may change and stop working.
 
-> **Warning** This library manually implements the HTTP/1.1 protocol. (Look at
+> **Warning**: This library manually implements the HTTP/1.1 protocol. (Look at
 > the [source code](./unstable.ts)!) I'm testing it, but it may contain bugs.
 > Also, don't expect performance.
 
-> **Warning** I am currently using a generator to return multiple responses.
+> **Warning**: I am currently using a generator to return multiple responses.
 > However, we may change how we use it in the future.
 
 related: https://github.com/denoland/deno/issues/15827
