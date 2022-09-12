@@ -33,7 +33,7 @@ Deno.serve(withEarlyHints(async function* (_request) {
 }));
 ```
 
-> **Warning**: Deno flash server (`Deno.serve()``) is an unstable API (as of
+> **Warning**: Deno flash server (`Deno.serve()`) is an unstable API (as of
 > v1.25). The API may change and stop working.
 
 > **Warning**: This library manually implements the HTTP/1.1 protocol. (Look at
