@@ -22,7 +22,7 @@ for (const method of ["GET", "POST", "HEAD", "DELETE", "PUT"]) {
       continue;
     }
     Deno.test({
-      name: `${method} - ${status}`,
+      name: `Method: ${method} / Status: ${status}`,
       async fn() {
         const body = nullBody.has(status) ? null : `[[status ${status}]]`;
         const controller = new AbortController();

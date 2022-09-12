@@ -1,4 +1,4 @@
-export const statusCodes: Record<number, string> = {
+export const statusCodes: Readonly<Record<number, string>> = {
   100: "Continue",
   101: "Switching Protocols",
   102: "Processing",

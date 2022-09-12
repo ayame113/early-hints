@@ -10,6 +10,17 @@ export type Handler = (
 
 const encoder = new TextEncoder();
 
+/**
+ * Create a 103 Early Hints response.
+ *
+ * The native Response object currently does not allow the creation of 103 Early Hints responses. This function creates a pseudo-response object that can **only** be used within this library.
+ *
+ * ```ts
+ * import { earlyHintsResponse } from "https://deno.land/x/103_early_hints@$VERSION/unstable.ts"
+ *
+ * const hintResponse = earlyHintsResponse(["/style.css", "https://foo.com/bar"]);
+ * ```
+ */
 export function earlyHintsResponse(pathList: string[]): ResponseObject {
   return {
     headers: new Headers([[
@@ -21,6 +32,29 @@ export function earlyHintsResponse(pathList: string[]): ResponseObject {
   };
 }
 
+/**
+ * Create a server that can return 103 Early Hints. Use with `Deno.serve()`.
+ *
+ * This function is experimental and unstable.
+ *
+ * ```ts
+ * import { contentType } from "https://deno.land/std@0.155.0/media_types/mod.ts";
+ * import { earlyHintsResponse, withEarlyHints } from "https://deno.land/x/103_early_hints@$VERSION/unstable.ts";
+ *
+ * Deno.serve(withEarlyHints(async function* (_request) {
+ *   // sends early hints response
+ *   yield earlyHintsResponse(["/style.css"]);
+ *
+ *   // do some long task
+ *   await new Promise((resolve) => setTimeout(resolve, 1000));
+ *
+ *   // Please return the actual response at the end.
+ *   return new Response("<!DOCTYPE html><html><body>hello world</body></html>", {
+ *     headers: { "Content-Type": contentType(".html") },
+ *   });
+ * }));
+ * ```
+ */
 export function withEarlyHints(handler: Handler): Deno.ServeHandler {
   return (async (req: Request) => {
     const [conn, _firstPacket] = Deno.upgradeHttpRaw(req);
