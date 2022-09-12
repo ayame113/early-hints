@@ -1,5 +1,6 @@
 import { assertEquals } from "https://deno.land/std@0.155.0/testing/asserts.ts";
 import { delay } from "https://deno.land/std@0.155.0/async/delay.ts";
+import { flakyTest } from "https://deno.land/x/flaky_test@v1.0.2/mod.ts";
 
 import { statusCodes } from "./src/status_code.ts";
 import { earlyHintsResponse, withEarlyHints } from "./unstable.ts";
@@ -24,7 +25,7 @@ for (const method of ["GET", "POST", "HEAD", "DELETE", "PUT"]) {
     }
     Deno.test({
       name: `Method: ${method} / Status: ${status}`,
-      async fn() {
+      fn: flakyTest(async () => {
         await delay(100);
         const body = nullBody.has(status) ? null : `[[status ${status}]]`;
         const controller = new AbortController();
@@ -44,7 +45,7 @@ for (const method of ["GET", "POST", "HEAD", "DELETE", "PUT"]) {
           controller.abort();
           await serverPromise;
         }
-      },
+      }),
     });
   }
 }
