@@ -45,7 +45,7 @@ for (const method of ["GET", "POST", "HEAD", "DELETE", "PUT"]) {
           controller.abort();
           await serverPromise;
         }
-      }),
+      }, { count: 10 }),
     });
   }
 }
