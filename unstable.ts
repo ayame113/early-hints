@@ -38,8 +38,8 @@ export function earlyHintsResponse(pathList: string[]): ResponseObject {
  * This function is experimental and unstable.
  *
  * ```ts
- * import { contentType } from "https://deno.land/std@0.155.0/media_types/mod.ts";
  * import { earlyHintsResponse, withEarlyHints } from "https://deno.land/x/103_early_hints@$VERSION/unstable.ts";
+ * import { contentType } from "https://deno.land/std@0.155.0/media_types/mod.ts";
  *
  * Deno.serve(withEarlyHints(async function* (_request) {
  *   // sends early hints response
