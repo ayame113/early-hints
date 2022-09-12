@@ -1,6 +1,15 @@
+import { contentType } from "https://deno.land/std@0.155.0/media_types/mod.ts";
 import { earlyHintsResponse, withEarlyHints } from "../unstable.ts";
 
-Deno.serve(withEarlyHints(function* (_request) {
+Deno.serve(withEarlyHints(async function* (_request) {
+  // sends early hints response
   yield earlyHintsResponse(["/style.css"]);
-  return new Response("aaa");
+
+  // do some long task
+  await new Promise((resolve) => setTimeout(resolve, 1000));
+
+  // Please return the actual response at the end.
+  return new Response("<!DOCTYPE html><html><body>hello world</body></html>", {
+    headers: { "Content-Type": contentType(".html") },
+  });
 }));

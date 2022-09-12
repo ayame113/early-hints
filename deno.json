@@ -1,0 +1,11 @@
+{
+  "tasks": {
+    "test": "deno test --doc --allow-net --unstable",
+    "test:coverage": "deno task test --coverage=coverage",
+    "test:lint": "deno lint",
+    "test:fmt": "deno fmt --check",
+    "fmt": "deno fmt",
+    "check": "deno check --unstable ./unstable.ts"
+  },
+  "importMap": "./import-map.json"
+}
