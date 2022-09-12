@@ -9,6 +9,9 @@ A library that uses Deno's
 [flash server](https://github.com/denoland/deno/tree/main/ext/flash)
 (experimental) to serve 103 Early Hints.
 
+> **Note** See [here](https://dev.to/qainsights/what-is-http-103-1l26) for 103
+> Early Hints.
+
 ```ts
 import { contentType } from "https://deno.land/std@0.155.0/media_types/mod.ts";
 import {
