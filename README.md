@@ -2,6 +2,7 @@
 
 [![ci](https://github.com/ayame113/early-hints/actions/workflows/ci.yml/badge.svg)](https://github.com/ayame113/early-hints/actions/workflows/ci.yml)
 [![codecov](https://codecov.io/gh/ayame113/early-hints/branch/main/graph/badge.svg?token=fd7I1uUnCn)](https://codecov.io/gh/ayame113/early-hints)
+[![deno doc](https://doc.deno.land/badge.svg)](https://deno.land/x/103_early_hints/unstable.ts)
 
 https://deno.land/x/103_early_hints
 
@@ -33,7 +34,7 @@ Deno.serve(withEarlyHints(async function* (_request) {
 }));
 ```
 
-> **Warning**: Deno flash server (`Deno.serve()``) is an unstable API (as of
+> **Warning**: Deno flash server (`Deno.serve()`) is an unstable API (as of
 > v1.25). The API may change and stop working.
 
 > **Warning**: This library manually implements the HTTP/1.1 protocol. (Look at
