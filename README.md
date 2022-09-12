@@ -1,5 +1,8 @@
 # early-hints
 
+[![ci](https://github.com/ayame113/early-hints/actions/workflows/ci.yml/badge.svg)](https://github.com/ayame113/early-hints/actions/workflows/ci.yml)
+[![codecov](https://codecov.io/gh/ayame113/early-hints/branch/main/graph/badge.svg?token=fd7I1uUnCn)](https://codecov.io/gh/ayame113/early-hints)
+
 https://deno.land/x/103_early_hints
 
 A library that uses Deno's
