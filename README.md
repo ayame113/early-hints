@@ -7,6 +7,7 @@ A library that uses Deno's
 (experimental) to serve 103 Early Hints.
 
 ```ts
+import { contentType } from "https://deno.land/std@0.155.0/media_types/mod.ts";
 import {
   earlyHintsResponse,
   withEarlyHints,

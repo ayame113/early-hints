@@ -5,8 +5,7 @@
     "test:lint": "deno lint",
     "test:fmt": "deno fmt --check",
     "fmt": "deno fmt",
-    "check": "deno check ./mod.ts",
-    "bundle": "deno run --allow-run --allow-read --unstable ./dev/transpile.ts"
+    "check": "deno check ./unstable.ts"
   },
   "importMap": "./import-map.json"
 }
