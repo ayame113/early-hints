@@ -14,11 +14,11 @@ A library that uses Deno's
 > Early Hints.
 
 ```ts
-import { contentType } from "https://deno.land/std@0.155.0/media_types/mod.ts";
 import {
   earlyHintsResponse,
   withEarlyHints,
 } from "https://deno.land/x/103_early_hints@$VERSION/unstable.ts";
+import { contentType } from "https://deno.land/std@0.155.0/media_types/mod.ts";
 
 Deno.serve(withEarlyHints(async function* (_request) {
   // sends early hints response
@@ -43,5 +43,13 @@ Deno.serve(withEarlyHints(async function* (_request) {
 
 > **Warning**: I am currently using a generator to return multiple responses.
 > However, we may change how we use it in the future.
+
+> **Warning**: Only HTTP/1.1 is supported. I don't know if this library can
+> support HTTP/2.
+
+> **Warning**: As of Deno 1.25.2 there is a bug(?) in the flash server that only
+> accepts the first one request. It also
+> [hangs on Windows](https://github.com/denoland/deno/issues/15549). However, I
+> believe this will be resolved soon.
 
 related: https://github.com/denoland/deno/issues/15827
