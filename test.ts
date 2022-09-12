@@ -1,4 +1,5 @@
 import { assertEquals } from "https://deno.land/std@0.155.0/testing/asserts.ts";
+import { delay } from "https://deno.land/std@0.155.0/async/delay.ts";
 
 import { statusCodes } from "./src/status_code.ts";
 import { earlyHintsResponse, withEarlyHints } from "./unstable.ts";
@@ -24,6 +25,7 @@ for (const method of ["GET", "POST", "HEAD", "DELETE", "PUT"]) {
     Deno.test({
       name: `Method: ${method} / Status: ${status}`,
       async fn() {
+        await delay(100);
         const body = nullBody.has(status) ? null : `[[status ${status}]]`;
         const controller = new AbortController();
         const serverPromise = Deno.serve(

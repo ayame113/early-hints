@@ -28,7 +28,10 @@ jobs:
       - name: 🧐 Type Check
         run: deno task check
   Test:
-    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
     steps:
       - name: Git Checkout Module
         uses: actions/checkout@v2
