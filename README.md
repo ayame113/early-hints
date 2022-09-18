@@ -6,6 +6,28 @@
 
 https://deno.land/x/103_early_hints
 
+> What’s not supported To reduce security and privacy implications, the HTML and
+> Fetch living standards have some restrictions on when Early Hints can be
+> handled. Chrome ignores Early Hints sent in the following situations to comply
+> these specifications.
+>
+> - Early Hints sent on HTTP/1.1 or earlier
+>
+> https://chromium.googlesource.com/chromium/src/+/master/docs/early-hints.md#what_s-not-supported
+
+There is currently no HTTP server in Deno that supports HTTP/2 and can send 103
+Early Hints.
+
+So this library is currently not working at all.
+
+Let's reconsider when
+[denoland/deno#15827](https://github.com/denoland/deno/issues/15827) is
+resolved.
+
+<!--
+
+---
+
 A library that uses Deno's
 [flash server](https://github.com/denoland/deno/tree/main/ext/flash)
 (experimental) to serve 103 Early Hints.
@@ -53,3 +75,5 @@ Deno.serve(withEarlyHints(async function* (_request) {
 > believe this will be resolved soon.
 
 related: https://github.com/denoland/deno/issues/15827
+
+-->
