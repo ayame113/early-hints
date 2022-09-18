@@ -11,6 +11,8 @@ export type Handler = (
 const encoder = new TextEncoder();
 
 /**
+ * @deprecated
+ *
  * Create a 103 Early Hints response.
  *
  * The native Response object currently does not allow the creation of 103 Early Hints responses. This function creates a pseudo-response object that can **only** be used within this library.
@@ -33,6 +35,8 @@ export function earlyHintsResponse(pathList: string[]): ResponseObject {
 }
 
 /**
+ * @deprecated
+ *
  * Create a server that can return 103 Early Hints. Use with `Deno.serve()`.
  *
  * This function is experimental and unstable.
