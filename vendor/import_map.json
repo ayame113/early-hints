@@ -1,0 +1,6 @@
+{
+  "imports": {
+    "https://deno.land/x/103_early_hints@$VERSION/": "../",
+    "https://deno.land/": "./deno.land/"
+  }
+}
