@@ -1,4 +1,4 @@
-import { assertEquals } from "https://deno.land/std@0.155.0/testing/asserts.ts";
+import { assertEquals } from "https://deno.land/std@0.173.0/testing/asserts.ts";
 import { flakyTest } from "https://deno.land/x/flaky_test@v1.0.2/mod.ts";
 
 import { statusCodes } from "./src/status_code.ts";
