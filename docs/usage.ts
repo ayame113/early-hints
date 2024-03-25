@@ -1,5 +1,5 @@
 import { earlyHintsResponse, withEarlyHints } from "../unstable.ts";
-import { contentType } from "https://deno.land/std@0.155.0/media_types/mod.ts";
+import { contentType } from "https://deno.land/std@0.220.1/media_types/mod.ts";
 
 Deno.serve(withEarlyHints(async function* (_request) {
   // sends early hints response
