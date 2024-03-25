@@ -1,5 +1,5 @@
 import { statusCodes } from "./src/status_code.ts";
-import { writeAll } from "https://deno.land/std@0.155.0/streams/mod.ts";
+import { writeAll } from "https://deno.land/std@0.220.1/streams/mod.ts";
 
 export type ResponseObject = Pick<Response, "headers" | "status" | "body">;
 export type Handler = (
@@ -43,7 +43,7 @@ export function earlyHintsResponse(pathList: string[]): ResponseObject {
  *
  * ```ts
  * import { earlyHintsResponse, withEarlyHints } from "https://deno.land/x/103_early_hints@$VERSION/unstable.ts";
- * import { contentType } from "https://deno.land/std@0.155.0/media_types/mod.ts";
+ * import { contentType } from "https://deno.land/std@0.220.1/media_types/mod.ts";
  *
  * Deno.serve(withEarlyHints(async function* (_request) {
  *   // sends early hints response
